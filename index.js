@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const readmeGenerate = require()
+const readmeGenerate = require("./utils/generateMarkdown")
 
 // TODO: Create an array of questions for user input
 const questions = () => {
@@ -70,19 +70,33 @@ const questions = () => {
             default: true
         },
         {
-            type: 'checkbox',
+            type: 'list',
             name: 'licenses',
-            message: 'What licenses did you use? (Check all that apply)',
-            choices: ['General Public License', 'Apache', 'Microsoft Public License', 'Berkeley Software Distrobution', 'Eclipse Public License']
+            message: 'What license did you use? ',
+            choices: ['MIT', 'Apache', 'Microsoft Public License', 'Berkeley Software Distrobution', 'Eclipse Public License']
         }
     ])
 };
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+//function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+const init = () => { 
+    questions().then((response) => {
+        //console.log(response)
+        
+        const answersString = readmeGenerate(response);
+
 
 // Function call to initialize app
-init();
+fs.writeFile('.README.md', answersString, err => {
+    if (err) throw err;
+
+
+    console.log('ReadMe Generated!');
+})
+})
+}
+
+init()
