@@ -7,7 +7,12 @@ function renderLicenseBadge(license) {
   if(license =="Apache"){
     return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
   }
-  
+  if(license =="Eclipse Public License"){
+    return "[![License]([![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)"
+  }
+  if(license =="Mozilla Public License 2.0"){
+    return "[![License]([![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)"
+  }
 }
 
 // TODO: Create a function that returns the license link

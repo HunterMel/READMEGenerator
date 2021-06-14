@@ -73,7 +73,7 @@ const questions = () => {
             type: 'list',
             name: 'licenses',
             message: 'What license did you use? ',
-            choices: ['MIT', 'Apache', 'Microsoft Public License', 'Berkeley Software Distrobution', 'Eclipse Public License']
+            choices: ['MIT', 'Apache', 'Eclipse Public License', 'Mozilla Public License 2.0']
         }
     ])
 };
